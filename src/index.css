@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'GFVewPenGray_K';
+  src: local('GF뉴연필고딕그레이'), local('GFVewPenGray_K');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  font-family: 'GFVewPenGray_K', system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #1e1030;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(180, 150, 220, 0.22), transparent 38%),
+    radial-gradient(circle at 90% 10%, rgba(160, 120, 210, 0.12), transparent 40%),
+    linear-gradient(180deg, #faf5ff 0%, #f3e8ff 48%, #ece0ff 100%);
+  min-height: 100vh;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}

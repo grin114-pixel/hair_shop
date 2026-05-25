@@ -1,0 +1,1148 @@
+:root {
+  --hs-purple: #a78bc9;
+  --hs-purple-mid: #bfa3da;
+  --hs-purple-soft: #d4bff0;
+  --hs-purple-muted: rgba(167, 139, 201, 0.14);
+  --hs-outline: rgba(167, 139, 201, 0.22);
+  --hs-text: #2d1540;
+  --hs-card-gap: 48px;
+  --hs-meta-pad-y: 0.625rem;
+  --hs-meta-pad-x: 0.75rem;
+  --hs-meta-gap: 0.5rem;
+  --hs-meta-amount-min: 2.75rem;
+}
+
+/* ─── Shell ─── */
+
+.auth-shell,
+.app-shell {
+  min-height: 100vh;
+}
+
+.auth-shell {
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+/* ─── Surfaces ─── */
+
+.pin-card,
+.notice-card,
+.empty-state,
+.record-body-surface {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(167, 139, 201, 0.22);
+  box-shadow: 0 16px 36px rgba(60, 20, 100, 0.06);
+  backdrop-filter: blur(16px);
+}
+
+/* ─── PIN Card (Login) ─── */
+
+.pin-card {
+  width: min(100%, 420px);
+  border-radius: 28px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.app-badge,
+.topbar-title,
+.checkbox-row,
+.app-icon,
+.empty-illustration {
+  display: flex;
+  align-items: center;
+}
+
+.app-badge,
+.eyebrow {
+  color: var(--hs-purple);
+}
+
+.app-badge {
+  gap: 10px;
+  font-weight: 700;
+}
+
+.pin-card .app-badge span {
+  font-size: 121%;
+  font-weight: 800;
+}
+
+.app-badge svg,
+.app-icon svg,
+.empty-illustration svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ─── Fields ─── */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.field span {
+  font-size: 87%;
+  color: #64748b;
+}
+
+.field input,
+.field select,
+.field-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #e4d4f4;
+  background: #fff;
+  border-radius: 14px;
+  padding: 11px 14px;
+  font: inherit;
+  color: var(--hs-text);
+  font-weight: 400;
+  transition: border-color 0.15s ease;
+}
+
+.field input:focus,
+.field select:focus,
+.field-textarea:focus,
+.pin-entry-input:focus,
+.record-edit-input:focus {
+  outline: none;
+  border-color: var(--hs-purple-soft);
+}
+
+.field-plain {
+  margin: 0;
+  font-weight: 400;
+}
+
+.field-textarea {
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.6;
+}
+
+.field-textarea--course {
+  min-height: 72px;
+}
+
+/* ─── PIN Entry ─── */
+
+.pin-entry-field {
+  margin-top: 4.5rem;
+}
+
+.pin-entry-input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #e4d4f4;
+  background: #fff;
+  border-radius: 16px;
+  padding: 14px 16px;
+  font: inherit;
+  color: var(--hs-text);
+  font-weight: 400;
+  transition: border-color 0.15s ease;
+}
+
+.pin-entry-input:focus {
+  outline: none;
+  border-color: var(--hs-purple-soft);
+}
+
+.checkbox-row {
+  gap: 10px;
+  color: #334155;
+  font-weight: 600;
+}
+
+.pin-card .checkbox-row {
+  align-self: stretch;
+  justify-content: center;
+  width: 100%;
+}
+
+.pin-card .primary-button {
+  margin-top: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.checkbox-row input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--hs-purple);
+}
+
+.pin-subtitle,
+.notice-card p,
+.empty-state p {
+  color: #64748b;
+  margin: 0;
+}
+
+.error-text {
+  color: #dc2626;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* ─── Buttons ─── */
+
+.primary-button,
+.secondary-button,
+.text-button,
+.record-icon-button {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease,
+    background-color 0.16s ease;
+}
+
+.primary-button:hover,
+.secondary-button:hover,
+.text-button:hover,
+.record-icon-button:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+
+.primary-button,
+.secondary-button {
+  justify-content: center;
+  border-radius: 16px;
+  padding: 13px 18px;
+  font-weight: 700;
+}
+
+.primary-button {
+  background: linear-gradient(135deg, var(--hs-purple-mid), var(--hs-purple));
+  color: #fff;
+  box-shadow: 0 12px 24px rgba(120, 80, 180, 0.26);
+}
+
+.primary-button:disabled,
+.secondary-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.secondary-button {
+  background: #fff;
+  color: #334155;
+  border: 1px solid #e4d4f4;
+}
+
+.text-button {
+  align-self: flex-start;
+  padding: 0;
+  background: transparent;
+  color: var(--hs-purple);
+  font-weight: 700;
+}
+
+.pin-change-button {
+  align-self: flex-end;
+  margin-top: 0;
+  color: #9070b8;
+  font-weight: 600;
+  font-size: 90%;
+}
+
+.pin-change-button:hover {
+  color: #6a4a98;
+}
+
+.pin-change-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 20px;
+  background: #faf5ff;
+  border: 1px solid #e4d4f4;
+}
+
+.pin-change-panel button {
+  width: 100%;
+}
+
+/* ─── Focus outlines ─── */
+
+.primary-button:focus,
+.secondary-button:focus,
+.text-button:focus,
+.record-icon-button:focus-visible {
+  outline: 3px solid var(--hs-purple-muted);
+  outline-offset: 2px;
+}
+
+/* ─── PIN Card headings ─── */
+
+.pin-card h1,
+.notice-card h2,
+.empty-state h2 {
+  margin: 0;
+  color: #0f172a;
+}
+
+.pin-card h1 {
+  font-weight: 800;
+}
+
+/* ─── App Shell ─── */
+
+.app-shell {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 8px 6px 56px 20px;
+  box-sizing: border-box;
+}
+
+/* ─── Topbar ─── */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.topbar-title {
+  gap: 14px;
+}
+
+.topbar-title h1 {
+  margin: 0;
+  font-size: calc(1.35rem * 1.1);
+  line-height: 1.2;
+  color: var(--hs-purple);
+  font-weight: 800;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: flex-start;
+  margin-top: -2px;
+  margin-right: -4px;
+}
+
+.lock-button {
+  box-sizing: border-box;
+  padding: 0;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  max-width: 28px;
+  min-height: 28px;
+  max-height: 28px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lock-button svg {
+  width: 14px;
+  height: 14px;
+}
+
+.app-icon,
+.empty-illustration {
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(191, 163, 218, 0.2), rgba(167, 139, 201, 0.12));
+  color: var(--hs-purple-mid);
+}
+
+/* ─── Toast / Notice ─── */
+
+.notice-card,
+.empty-state {
+  border-radius: 24px;
+  padding: 22px;
+}
+
+.notice-card {
+  margin-bottom: 16px;
+}
+
+.error-card {
+  border-color: rgba(239, 68, 68, 0.18);
+}
+
+.toast-message {
+  position: sticky;
+  top: 16px;
+  z-index: 5;
+  margin-bottom: 16px;
+  background: #5a2a8a;
+  color: #fff;
+  border-radius: 16px;
+  padding: 12px 16px;
+  text-align: center;
+}
+
+/* ─── Content Area ─── */
+
+.content-area {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hs-card-gap);
+}
+
+/* ─── Date Edit Input ─── */
+
+.date-edit-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.date-edit-input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #e4d4f4;
+  background: #fff;
+  border-radius: 14px;
+  padding: 11px 14px;
+  font: inherit;
+  color: var(--hs-text);
+  font-weight: 400;
+  transition: border-color 0.15s ease;
+}
+
+.date-edit-input:focus {
+  outline: none;
+  border-color: var(--hs-purple-soft);
+}
+
+/* ─── FAB ─── */
+
+.fab {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  z-index: 20;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--hs-purple-mid), var(--hs-purple));
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(120, 80, 180, 0.40);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.fab:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 32px rgba(120, 80, 180, 0.52);
+}
+
+.fab:active {
+  transform: scale(0.96);
+}
+
+.fab svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* ─── Modal ─── */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: rgba(30, 10, 60, 0.32);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.modal-overlay--center {
+  align-items: center;
+}
+
+@media (min-width: 520px) {
+  .modal-overlay {
+    align-items: center;
+  }
+}
+
+.modal-sheet {
+  width: 100%;
+  max-width: 540px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 28px 28px 0 0;
+  padding: 0 20px 32px;
+  box-shadow: 0 -8px 40px rgba(60, 20, 100, 0.14);
+  animation: slideUp 0.22s ease;
+}
+
+@media (min-width: 520px) {
+  .modal-sheet {
+    border-radius: 28px;
+    padding: 0 24px 28px;
+    animation: fadeIn 0.18s ease;
+  }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0 14px;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1;
+}
+
+.modal-title {
+  font-size: 97%;
+  font-weight: 800;
+  color: var(--hs-purple);
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.modal-close-button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: #ede0f8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--hs-purple);
+  flex-shrink: 0;
+  transition: background 0.14s ease;
+}
+
+.modal-close-button:hover {
+  background: #ddc8f0;
+}
+
+.modal-close-button svg {
+  width: 14px;
+  height: 14px;
+}
+
+.modal-sheet--confirm {
+  padding-bottom: 22px;
+}
+
+.confirm-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.confirm-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* ─── Record Form (used inside modal) ─── */
+
+.record-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.form-row--single {
+  grid-template-columns: 1fr;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+.save-button {
+  font-size: 0.92rem;
+  padding: 11px 24px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--hs-purple-mid), var(--hs-purple));
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(120, 80, 180, 0.22);
+}
+
+/* ─── Records List ─── */
+
+.records-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hs-card-gap);
+}
+
+.record-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hs-card-gap);
+}
+
+.empty-state {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ─── Record Card ─── */
+
+.record-outer {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.record-body-surface {
+  border-radius: 22px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.record-date-header {
+  background: linear-gradient(135deg, rgba(191, 163, 218, 0.18), rgba(167, 139, 201, 0.10));
+  padding: 10px 14px 10px 18px;
+  border-bottom: 1px solid rgba(167, 139, 201, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.record-date-label {
+  font-size: 87%;
+  font-weight: 700;
+  color: var(--hs-purple);
+  letter-spacing: 0.02em;
+  margin: 0;
+  min-width: 0;
+}
+
+.record-header-title {
+  margin: 0;
+  min-width: 0;
+  font-weight: 800;
+  font-size: 92%;
+  color: #4a1870;
+  letter-spacing: 0.01em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.record-header-sub {
+  font-size: 92%;
+  font-weight: 700;
+  color: rgba(74, 24, 112, 0.7);
+}
+
+.record-date-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.record-date-inline {
+  font-size: 82%;
+  font-weight: 700;
+  color: rgba(74, 24, 112, 0.72);
+  white-space: nowrap;
+  margin-right: 6px;
+}
+
+.record-icon-button--header {
+  width: 26px;
+  height: 26px;
+  border-radius: 9px;
+  border-color: rgba(210, 180, 240, 0.9);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.record-body {
+  padding: 16px 18px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 14px;
+  font-size: 90%;
+  align-items: start;
+}
+
+/* 메모 없음·짧음: 카드 높이 = 왼쪽(시술·금액), 메모 열 영역은 유지 */
+.record-body--compact {
+  align-items: stretch;
+}
+
+.record-body--compact .record-col--meta {
+  height: auto;
+  grid-template-rows: auto auto;
+}
+
+.record-body--compact .record-col--content {
+  min-height: 0;
+}
+
+.record-body--compact .record-memo-wrap {
+  min-height: 100%;
+}
+
+/* 메모 김: 메모 높이에 맞춰 카드 확장, 시술·금액 4:1 유지 */
+.record-body--tall-memo {
+  align-items: stretch;
+}
+
+.record-body--tall-memo .record-col {
+  height: 100%;
+  min-height: 0;
+}
+
+.record-body--tall-memo .record-col--meta {
+  height: 100%;
+  grid-template-rows: minmax(0, 3.6fr) minmax(var(--hs-meta-amount-min), 1.1fr);
+}
+
+.record-col {
+  min-width: 0;
+}
+
+.record-col--meta {
+  display: grid;
+  grid-template-rows: auto auto;
+  height: auto;
+  gap: 0;
+}
+
+.record-meta-course,
+.record-meta-amount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: var(--hs-meta-pad-y) var(--hs-meta-pad-x);
+  min-height: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.record-meta-course {
+  border-bottom: 1px solid rgba(167, 139, 201, 0.12);
+  padding-bottom: calc(var(--hs-meta-pad-y) + var(--hs-meta-gap));
+}
+
+.record-meta-amount {
+  min-height: var(--hs-meta-amount-min);
+  padding-top: calc(var(--hs-meta-pad-y) + var(--hs-meta-gap));
+}
+
+.record-meta-course .record-field-value--course {
+  text-align: center;
+  width: 100%;
+  white-space: pre-wrap;
+  line-height: 1.6;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.record-course-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.record-course-list li {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.45em;
+  max-width: 100%;
+  font-size: 95%;
+  color: var(--hs-text);
+  font-weight: 500;
+  line-height: 1.55;
+  text-align: left;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.record-course-list li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 0.4em;
+  height: 0.4em;
+  margin-top: 0.55em;
+  border-radius: 50%;
+  background: linear-gradient(145deg, var(--hs-purple-mid), var(--hs-purple));
+  box-shadow: 0 0 0 2px rgba(167, 139, 201, 0.18);
+}
+
+.record-meta-amount .record-field {
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+}
+
+.record-col--meta .record-field-label,
+.record-col--meta .record-field-value {
+  text-align: center;
+}
+
+.record-col--content {
+  border-left: 1px dashed rgba(167, 139, 201, 0.32);
+  padding-left: 14px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* ─── Record Field Rows ─── */
+
+.record-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.record-field {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  min-width: 0;
+}
+
+.record-field--center {
+  justify-content: center;
+}
+
+.record-field--center .record-field-value {
+  text-align: center;
+  width: 100%;
+}
+
+.record-field-label {
+  font-size: 77%;
+  font-weight: 700;
+  color: var(--hs-purple-mid);
+  white-space: nowrap;
+  flex-shrink: 0;
+  background: rgba(167, 139, 201, 0.10);
+  border-radius: 6px;
+  padding: 2px 6px;
+  line-height: 1.5;
+}
+
+.record-field-value {
+  font-size: 95%;
+  color: var(--hs-text);
+  font-weight: 500;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+.record-divider {
+  border: none;
+  border-top: 1px solid rgba(167, 139, 201, 0.10);
+  margin: 0;
+}
+
+/* ─── Memo column ─── */
+
+.record-memo-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-height: 0;
+}
+
+.record-memo {
+  margin: 0;
+  font-size: 93%;
+  color: #3a1460;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+/* ─── Record Meta Row (edit/delete buttons) ─── */
+
+.record-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  padding: 8px 4px 0;
+}
+
+.record-icon-button {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid #dcc8f0;
+  background: #fff;
+  color: var(--hs-purple-mid);
+  box-shadow: 0 1px 2px rgba(60, 20, 100, 0.05);
+}
+
+.record-icon-button svg {
+  width: 13px;
+  height: 13px;
+}
+
+.record-icon-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ─── Inline Edit Form (inside card) ─── */
+
+.record-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 18px;
+}
+
+.record-edit-input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #e4d4f4;
+  background: #fff;
+  border-radius: 12px;
+  padding: 9px 12px;
+  font: inherit;
+  font-size: 93%;
+  color: var(--hs-text);
+  font-weight: 400;
+  transition: border-color 0.15s ease;
+}
+
+.record-edit-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #e4d4f4;
+  background: #fff;
+  border-radius: 12px;
+  padding: 9px 12px;
+  font: inherit;
+  font-size: 93%;
+  color: var(--hs-text);
+  font-weight: 400;
+  min-height: 72px;
+  resize: none;
+  overflow: hidden;
+  line-height: 1.6;
+  transition: border-color 0.15s ease;
+}
+
+.record-edit-textarea:focus {
+  outline: none;
+  border-color: var(--hs-purple-soft);
+}
+
+.record-edit-textarea--course {
+  min-height: 72px;
+  resize: vertical;
+}
+
+.edit-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.edit-form-label {
+  font-size: 82%;
+  font-weight: 700;
+  color: #9070b8;
+  margin-bottom: 3px;
+  display: block;
+}
+
+.edit-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.edit-save-button {
+  font-size: 0.88rem;
+  padding: 9px 18px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--hs-purple-mid), var(--hs-purple));
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  transition: transform 0.15s ease;
+}
+
+.edit-save-button:hover {
+  transform: translateY(-1px);
+}
+
+.edit-save-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.edit-cancel-button {
+  font-size: 0.88rem;
+  padding: 9px 18px;
+  border-radius: 12px;
+  background: #fff;
+  color: #334155;
+  border: 1px solid #e4d4f4;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  transition: transform 0.15s ease;
+}
+
+.edit-cancel-button:hover {
+  transform: translateY(-1px);
+}
+
+/* ─── Responsive ─── */
+
+@media (max-width: 640px) {
+  .pin-card,
+  .notice-card,
+  .empty-state,
+  .record-body-surface {
+    border-radius: 18px;
+  }
+
+  .app-shell {
+    padding: 18px 14px 48px;
+  }
+
+  .topbar {
+    align-items: stretch;
+  }
+
+  .lock-button {
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+    max-width: 26px;
+    min-height: 26px;
+    max-height: 26px;
+    border-radius: 9px;
+    flex: 0 0 auto;
+    align-self: flex-start;
+  }
+
+  .lock-button svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .edit-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .save-button,
+  .primary-button:not(.lock-button),
+  .secondary-button:not(.lock-button) {
+    width: 100%;
+  }
+
+}
+
+/* ─── Utility ─── */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
