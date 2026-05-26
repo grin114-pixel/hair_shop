@@ -753,17 +753,19 @@
   min-height: 100%;
 }
 
-/* 메모 김: 왼쪽(시술·금액)은 높이에 맞춰 확장, 오른쪽(메모)은 콘텐츠 높이만 */
-.record-body--tall-memo {
-  align-items: stretch;
-}
-
+/* 메모 김: 왼쪽(시술·금액)만 높이에 맞춰 확장, 오른쪽(메모)은 콘텐츠 높이만 */
 .record-body--tall-memo .record-col--meta {
-  grid-template-rows: minmax(0, 3.6fr) minmax(var(--hs-meta-amount-min), 1.1fr);
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
 }
 
-.record-body--tall-memo .record-col--content {
-  align-self: start;
+.record-body--tall-memo .record-meta-course {
+  flex: 1;
+}
+
+.record-body--tall-memo .record-meta-amount {
+  flex-shrink: 0;
 }
 
 .record-col {
