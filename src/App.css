@@ -753,19 +753,17 @@
   min-height: 100%;
 }
 
-/* 메모 김: 메모 높이에 맞춰 카드 확장, 시술·금액 4:1 유지 */
+/* 메모 김: 왼쪽(시술·금액)은 높이에 맞춰 확장, 오른쪽(메모)은 콘텐츠 높이만 */
 .record-body--tall-memo {
   align-items: stretch;
 }
 
-.record-body--tall-memo .record-col {
-  height: 100%;
-  min-height: 0;
+.record-body--tall-memo .record-col--meta {
+  grid-template-rows: minmax(0, 3.6fr) minmax(var(--hs-meta-amount-min), 1.1fr);
 }
 
-.record-body--tall-memo .record-col--meta {
-  height: 100%;
-  grid-template-rows: minmax(0, 3.6fr) minmax(var(--hs-meta-amount-min), 1.1fr);
+.record-body--tall-memo .record-col--content {
+  align-self: start;
 }
 
 .record-col {
@@ -1142,20 +1140,6 @@
   .primary-button:not(.lock-button),
   .secondary-button:not(.lock-button) {
     width: 100%;
-  }
-
-  .record-body--tall-memo {
-    align-items: start;
-  }
-
-  .record-body--tall-memo .record-col,
-  .record-body--tall-memo .record-col--meta {
-    height: auto;
-    grid-template-rows: auto auto;
-  }
-
-  .record-body--tall-memo .record-memo-wrap {
-    flex: 0 1 auto;
   }
 
 }
