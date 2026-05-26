@@ -1151,6 +1151,11 @@
   .record-body--tall-memo .record-col,
   .record-body--tall-memo .record-col--meta {
     height: auto;
+    grid-template-rows: auto auto;
+  }
+
+  .record-body--tall-memo .record-memo-wrap {
+    flex: 0 1 auto;
   }
 
 }
