@@ -753,19 +753,21 @@
   min-height: 100%;
 }
 
-/* 메모 김: 왼쪽(시술·금액)만 높이에 맞춰 확장, 오른쪽(메모)은 콘텐츠 높이만 */
+/* 메모 김: 카드 높이는 메모 내용 기준, 왼쪽 열은 그 높이 안에서만 배치 */
+.record-body--tall-memo {
+  align-items: start;
+}
+
 .record-body--tall-memo .record-col--meta {
   align-self: stretch;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
 }
 
-.record-body--tall-memo .record-meta-course {
-  flex: 1;
-}
-
-.record-body--tall-memo .record-meta-amount {
-  flex-shrink: 0;
+.record-body--tall-memo .record-col--content,
+.record-body--tall-memo .record-memo-wrap {
+  align-self: start;
+  flex: 0 0 auto;
 }
 
 .record-col {
