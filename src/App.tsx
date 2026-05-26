@@ -797,8 +797,9 @@ function RecordCard({
   onDelete: () => void
   isDeleting: boolean
 }) {
-  const hasMemo = Boolean(record.memo?.trim())
-  const memoIsLong = hasMemo && isLongMemo(record.memo)
+  const memoText = record.memo?.trim() ?? ''
+  const hasMemo = Boolean(memoText)
+  const memoIsLong = hasMemo && isLongMemo(memoText)
   const courseLines = record.course ? getCourseLines(record.course) : []
   const recordBodyClass = [
     'record-body',
@@ -861,7 +862,7 @@ function RecordCard({
           {/* 2열: 메모 */}
           <div className="record-col record-col--content">
             <div className="record-memo-wrap">
-              {hasMemo ? <p className="record-memo">{record.memo}</p> : null}
+              {hasMemo ? <p className="record-memo">{memoText}</p> : null}
             </div>
           </div>
         </div>
