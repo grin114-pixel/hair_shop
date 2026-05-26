@@ -1144,6 +1144,15 @@
     width: 100%;
   }
 
+  .record-body--tall-memo {
+    align-items: start;
+  }
+
+  .record-body--tall-memo .record-col,
+  .record-body--tall-memo .record-col--meta {
+    height: auto;
+  }
+
 }
 
 /* ─── Utility ─── */
