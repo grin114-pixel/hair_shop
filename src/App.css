@@ -753,7 +753,7 @@
   min-height: 100%;
 }
 
-/* 메모 김: 카드 높이는 메모 내용 기준, 왼쪽 열은 그 높이 안에서만 배치 */
+/* 메모 김: 데스크톱에서는 왼쪽 시술/금액 열을 메모 높이에 맞춘다 */
 .record-body--tall-memo {
   align-items: start;
 }
@@ -1144,6 +1144,11 @@
   .primary-button:not(.lock-button),
   .secondary-button:not(.lock-button) {
     width: 100%;
+  }
+
+  .record-body--tall-memo .record-col--meta {
+    align-self: start;
+    grid-template-rows: auto auto;
   }
 
 }
