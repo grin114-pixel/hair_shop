@@ -731,7 +731,7 @@
 
 .record-body--compact .record-col--meta {
   height: auto;
-  grid-template-rows: auto auto;
+  grid-template-rows: 1fr auto;
 }
 
 .record-body--compact .record-meta-course {
@@ -785,7 +785,6 @@
 .record-meta-amount {
   display: flex;
   align-items: center;
-  justify-content: center;
   box-sizing: border-box;
   padding: var(--hs-meta-pad-y) var(--hs-meta-pad-x);
   min-height: 0;
@@ -794,17 +793,19 @@
 }
 
 .record-meta-course {
+  justify-content: flex-start;
   border-bottom: 1px solid rgba(167, 139, 201, 0.12);
   padding-bottom: calc(var(--hs-meta-pad-y) + var(--hs-meta-gap));
 }
 
 .record-meta-amount {
+  justify-content: flex-start;
   min-height: var(--hs-meta-amount-min);
   padding-top: calc(var(--hs-meta-pad-y) + var(--hs-meta-gap));
 }
 
 .record-meta-course .record-field-value--course {
-  text-align: center;
+  text-align: left;
   width: 100%;
   white-space: pre-wrap;
   line-height: 1.6;
@@ -819,7 +820,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.25rem;
 }
 
@@ -866,6 +867,7 @@
   padding-left: 14px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   min-height: 0;
 }
 
@@ -926,6 +928,7 @@
 .record-memo-wrap {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 4px;
   flex: 1;
   min-height: 0;
@@ -1144,11 +1147,6 @@
   .primary-button:not(.lock-button),
   .secondary-button:not(.lock-button) {
     width: 100%;
-  }
-
-  .record-body--tall-memo .record-col--meta {
-    align-self: start;
-    grid-template-rows: auto auto;
   }
 
 }
