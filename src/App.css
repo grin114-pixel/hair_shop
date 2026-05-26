@@ -725,11 +725,24 @@
 /* 메모 없음·짧음: 카드 높이 = 왼쪽(시술·금액), 메모 열 영역은 유지 */
 .record-body--compact {
   align-items: stretch;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .record-body--compact .record-col--meta {
   height: auto;
   grid-template-rows: auto auto;
+}
+
+.record-body--compact .record-meta-course {
+  padding-top: 0.25rem;
+  padding-bottom: calc(0.25rem + var(--hs-meta-gap));
+}
+
+.record-body--compact .record-meta-amount {
+  padding-top: calc(0.25rem + var(--hs-meta-gap));
+  padding-bottom: 0.25rem;
+  min-height: 2rem;
 }
 
 .record-body--compact .record-col--content {

@@ -840,11 +840,7 @@ function RecordCard({
           {/* 1열: 시술 4 : 금액 1 */}
           <div className="record-col record-col--meta">
             <div className="record-meta-course">
-              {courseLines.length === 1 ? (
-                <span className="record-field-value record-field-value--course">
-                  {courseLines[0]}
-                </span>
-              ) : courseLines.length > 1 ? (
+              {courseLines.length > 0 ? (
                 <ul className="record-course-list">
                   {courseLines.map((line, index) => (
                     <li key={index}>{line}</li>
