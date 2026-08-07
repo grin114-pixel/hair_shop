@@ -97,15 +97,16 @@ function getCourseLines(course: string): string[] {
 
 // ─── Icons ───────────────────────────────────────────────────────────────────
 
-function ScissorsIcon() {
+function AppLogo({ size = 52 }: { size?: number }) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="6" cy="6" r="3" />
-      <circle cx="6" cy="18" r="3" />
-      <line x1="20" y1="4" x2="8.12" y2="15.88" />
-      <line x1="14.47" y1="14.48" x2="20" y2="20" />
-      <line x1="8.12" y1="8.12" x2="12" y2="12" />
-    </svg>
+    <img
+      src="/app-icon.png?v=6"
+      alt=""
+      className="app-logo"
+      width={size}
+      height={size}
+      decoding="async"
+    />
   )
 }
 
@@ -536,7 +537,7 @@ export default function App() {
           ) : (
             <>
               <div className="app-badge">
-                <ScissorsIcon />
+                <AppLogo size={40} />
                 <span>미용실</span>
               </div>
               <div className="pin-entry-field">
@@ -591,7 +592,7 @@ export default function App() {
       <div className="topbar">
         <div className="topbar-title">
           <div className="app-icon">
-            <ScissorsIcon />
+            <AppLogo size={56} />
           </div>
           <h1>미용실</h1>
         </div>
@@ -634,7 +635,7 @@ export default function App() {
         ) : records.length === 0 ? (
           <div className="empty-state">
             <div className="empty-illustration">
-              <ScissorsIcon />
+              <AppLogo size={56} />
             </div>
             <h2>아직 기록이 없어요</h2>
             <p>오른쪽 아래 + 버튼으로 첫 기록을 남겨보세요.</p>

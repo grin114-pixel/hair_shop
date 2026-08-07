@@ -1,9 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <rect width="100" height="100" rx="22" fill="#a78bc9"/>
-  <g stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" transform="translate(20, 18) scale(2.5)">
-    <circle cx="6" cy="6" r="3"/>
-    <circle cx="6" cy="18" r="3"/>
-    <line x1="20" y1="4" x2="8.12" y2="15.88"/>
-    <line x1="20" y1="20" x2="8.12" y2="8.12"/>
+  <rect width="100" height="100" rx="22" fill="#bdd065"/>
+  <g fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- face profile -->
+    <path d="M28 38c0-8 6-14 12-14 2 0 3 1 4 2"/>
+    <path d="M28 38c-1 10 2 22 10 28"/>
+    <path d="M40 26c4 2 8 8 9 16 1 6-1 12-4 16"/>
+    <path d="M34 30c6 4 10 12 10 20"/>
+    <!-- scissors -->
+    <circle cx="52" cy="62" r="5"/>
+    <circle cx="62" cy="62" r="5"/>
+    <path d="M55.5 58.5 L68 30"/>
+    <path d="M58.5 58.5 L48 30"/>
+    <!-- comb -->
+    <path d="M72 34 L82 52"/>
+    <path d="M74 36 L70 40"/>
+    <path d="M76 40 L72 44"/>
+    <path d="M78 44 L74 48"/>
+    <path d="M80 48 L76 52"/>
   </g>
 </svg>

@@ -10,11 +10,11 @@
   font-family: 'GFVewPenGray_K', system-ui, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #1e1030;
+  color: #2a3a12;
   background:
-    radial-gradient(circle at 20% 0%, rgba(180, 150, 220, 0.22), transparent 38%),
-    radial-gradient(circle at 90% 10%, rgba(160, 120, 210, 0.12), transparent 40%),
-    linear-gradient(180deg, #faf5ff 0%, #f3e8ff 48%, #ece0ff 100%);
+    radial-gradient(circle at 20% 0%, rgba(189, 208, 101, 0.28), transparent 38%),
+    radial-gradient(circle at 90% 10%, rgba(189, 208, 101, 0.14), transparent 40%),
+    linear-gradient(180deg, #f7fbeb 0%, #eef5d4 48%, #e5efc4 100%);
   min-height: 100vh;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
